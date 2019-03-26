@@ -1,5 +1,6 @@
 # Pool
-Pool is a simple object pool lib for Unity3D I wrote so you don't have to at the start of every project.
+Pool is a simple object pool lib for unity 3d I wrote, so you don't have to write one at the start of every project.
+Supports pooling of Prefabs, Monobhaviours and classes.
 ## Installation
 1. Clone this repository and use the Package Manager Window > Package Manager to add the package.json located in the root of this repository.
 ## Examples
