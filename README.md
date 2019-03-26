@@ -17,7 +17,7 @@ public class Example : MonoBehaviour {
     }
 
     void Foo() {
-        MyPooledType item = pool.Spawn();
+        MyPooledType item = pool.Allocate();
         // Time to do cool stuff
 
         // Release a pool member back to it's pool with this
@@ -41,7 +41,7 @@ public class Example : MonoBehaviour {
     }
 
     void Foo() {
-        MyPooledType item = pool.Spawn();
+        MyPooledType item = pool.Allocate();
         // Time to do cool stuff
 
         // Release a pool member back to it's pool with this
@@ -66,7 +66,7 @@ public class Example : MonoBehaviour {
     }
 
     void Foo() {
-        MyPooledType item = pool.Spawn();
+        MyPooledType item = pool.Allocate();
         // Time to do cool stuff
 
         // Release a pool member back to it's pool with this
