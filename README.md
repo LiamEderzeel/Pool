@@ -1,6 +1,7 @@
 # Pool
 Pool is a simple object pool lib for Unity3D I wrote so you don't have to at the start of every project.
-
+## Installation
+1. Clone this repository and use the Package Manager Window > Package Manager to add the package.json located in the root of this repository.
 ## Examples
 Use for normal classes.
 ```csharp
@@ -76,6 +77,22 @@ public class Example : MonoBehaviour {
 ```
 
 Use IFactory to write a factory to fit your needs.
-
 ```csharp
+using Pool;
+
+public class ExampleFactory<T> : IFactory<T> where T : new() {
+
+	string foo;
+
+	public ExampleFactory() : this("foo") { }
+	public ExampleFactory(string foo) {
+		this.foo = foo;
+	}
+
+	public T Create() {
+		T bar = new T(name);
+        // What ever you need here
+		return object;
+	}
+}
 ```
