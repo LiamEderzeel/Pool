@@ -10,21 +10,24 @@ using Pool;
 
 public class Example : MonoBehaviour {
     const START_SIZE = 5;
-    Pool<MyPooledType> pool;
+    Pool<Enemy> pool;
 
     void Start() {
-        pool = new Pool<MyPooledType>(new Factory<MyPooledType>(), START_SIZE;
+        pool = new Pool<Enemy>(new Factory<Enemy>(), START_SIZE;
     }
 
-    void Foo() {
-        MyPooledType item = pool.Allocate();
-        // Time to do cool stuff
+	void Spawn() {
+		Enemy enemy = pool.Allocate();
 
-        // Release a pool member back to it's pool with this
-        pool.Release(item);
-        // Or this
-        item.myPool.Release(item);
-    }
+		EventHandler handler = null;
+		handler = (sender, e) => {
+			pool.Release(enemy);
+			enemy.Death -= handler;
+		};
+
+		enemy.Death += handler;
+		enemy.gameObject.SetActive(true);
+	}
 } 
 ```
 
@@ -34,21 +37,24 @@ using Pool;
 
 public class Example : MonoBehaviour {
     const START_SIZE = 5;
-    Pool<MyPooledType> pool;
+    Pool<Enemy> pool;
 
     void Start() {
-        pool = new Pool<MyPooledType>(new MonoBehaviourFactory<MyPooledType>(prefab), START_SIZE;
+        pool = new Pool<MyPooledType>(new MonoBehaviourFactory<Enemy>(prefab), START_SIZE;
     }
 
-    void Foo() {
-        MyPooledType item = pool.Allocate();
-        // Time to do cool stuff
+	void Spawn() {
+		Enemy enemy = pool.Allocate();
 
-        // Release a pool member back to it's pool with this
-        pool.Release(item);
-        // Or this
-        item.myPool.Release(item);
-    }
+		EventHandler handler = null;
+		handler = (sender, e) => {
+			pool.Release(enemy);
+			enemy.Death -= handler;
+		};
+
+		enemy.Death += handler;
+		enemy.gameObject.SetActive(true);
+	}
 } 
 ```
 
@@ -58,22 +64,25 @@ using Pool;
 
 public class Example : MonoBehaviour {
     const START_SIZE = 5;
-    Pool<MyPooledType> pool;
+    Pool<Enemy> pool;
     GameObject prefab;
 
     void Start() {
-        pool = new Pool<MyPooledType>(new PrefabFactory<MyPooledType>(), START_SIZE;
+        pool = new Pool<Enemy>(new PrefabFactory<Enemy>(), START_SIZE;
     }
 
-    void Foo() {
-        MyPooledType item = pool.Allocate();
-        // Time to do cool stuff
+	void Spawn() {
+		Enemy enemy = pool.Allocate();
 
-        // Release a pool member back to it's pool with this
-        pool.Release(item);
-        // Or this
-        item.myPool.Release(item);
-    }
+		EventHandler handler = null;
+		handler = (sender, e) => {
+			pool.Release(enemy);
+			enemy.Death -= handler;
+		};
+
+		enemy.Death += handler;
+		enemy.gameObject.SetActive(true);
+	}
 } 
 ```
 
