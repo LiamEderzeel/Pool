@@ -2,7 +2,8 @@
 	"name": "com.liamederzeel.pool",
 	"displayName": "Pool",
 	"version": "0.0.1",
-	"unity": "2018.3.5f1",
+	"unity": "2018.3",
+	"unityRelease": "5f1",
 	"license": "MIT",
 	"description": "Simple object pool lib I wrote so you don't have to.",
 	"keywords": [
